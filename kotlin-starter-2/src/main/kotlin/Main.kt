@@ -29,10 +29,13 @@ fun main() {
     val textt:String? = null
     val texttLength = textt?.length?:0
 
-
+    //String tempalte -> bisa ketik $var untuk dijadikan satu dalam string
     print("Hello my name is $name2")
     println(name2)
     println(if (false) "Always true" else "Always false")
+    // bisa juga ada operation di dalamnya
+    val hour = 7
+    println("Office ${if (hour > 7) "already close" else "is open"}")
 
     //ARRAY COLLECTION
     //listOf -> value bisa sama
@@ -84,4 +87,206 @@ fun main() {
         Line 4
     """.trimIndent()
     println(line)
+
+
+
+    //------- IF STATEMENT ----------
+    val openHours = 7
+    val now = 20
+    val office: String
+    //if biasa
+//    if (now > openHours) {
+//        office = "Office already open"
+//    } else {
+//        office = "Office is closed"
+//    }
+
+    // cara lain if, bisa di simpan lngsung dalam variabel
+    office = if (now > 7) {
+        "Office already open"
+    } else if (now == openHours){
+        "Wait a minute, office will be open"
+    } else {
+        "Office is closed"
+    }
+    print(office)
+
+    // ------- BOOLEAN ------
+    val officeOpen = 7
+    val officeClosed = 16
+//    val isOpen = if (now >= officeOpen && now <= officeClosed){
+//        true
+//    } else {
+//        false
+//    }
+    // sederhananya
+    val isOpen = now >= officeOpen && now <= officeClosed
+
+    println("Office is open : $isOpen")
+
+    val isClose = now < officeOpen || now > officeClosed
+
+    println("Office is closed : $isClose")
+
+    if (!isOpen) {
+        println("Office is closed")
+    } else {
+        println("Office is open")
+    }
+
+    //--------- Number ------
+    val intNumber = 100
+    val longNumber: Long = 100
+    val longNumber2 = 100L
+    val shortNumber: Short = 10
+    val byteNumber = 0b11010010
+    val doubleNumber: Double = 1.3
+    val floatNumber: Float = 0.123456789f    // yang terbaca hanya 0.1234567
+
+    val maxInt = Int.MAX_VALUE // 2147483647
+    val minInt = Int.MIN_VALUE // -2147483648
+
+
+    //Konversi angka
+    /*
+    toByte(): Byte
+    toShort(): Short
+    toInt(): Int
+    toLong(): Long
+    toFloat(): Float
+    toDouble(): Double
+    toChar(): Char
+    */
+    val byteNumber2: Byte = 10
+    val intNumber2: Int = byteNumber2.toInt() // ready to go
+
+    val stringNumber = "23"
+    println(intNumber + stringNumber.toInt())
+
+    // --------- ARRAY -------
+    val array = arrayOf(1, 3, 5, 7)
+    /*
+    intArrayOf() : IntArray   -> val intArray = intArrayOf(1, 3, 5, 7)
+    booleanArrayOf() : BooleanArray
+    charArrayOf() : CharArray
+    longArrayOf() : LongArray
+    shortArrayOf() : ShortArray
+    byteArrayOf() : ByteArray
+    */
+
+
+    // --------- NULLABLE ----------
+    // berikan ? setelah type val
+    val texttt: String? = null // ready to go
+
+    // mengakses val yang null
+    var string: String? = "Dicoding"
+    if(string != null) { // smart cast
+        print(string.length) // It works now!
+    }
+
+    // menggunakan is
+    var obj: Any = "Dicoding"
+
+    if(obj is String) {
+        // Tidak membutuhkan casting secara eksplisit.
+        println("String length is ${obj.length}")
+    }
+
+
+    // Safe calls operator
+    // saat mengakses variable yang null, maka berikan ? jga saat mengaksesnya
+    val texts: String? = null
+    texts?.length
+
+    // Elvis operator -> buat value default jika objek null
+    val textsLength = texts?.length ?: 7
+    // sama seperti dibawah ini
+    //val textLength = if (text != null) text.length else 7
+
+
+    //------ Functions ------
+    // : String -> maksudnya adalah tipe value yang akan di return
+    // namun dri kompiler biasanya bisa deteksi lngsung, maka kita tidak wajib untuk membuatnya
+//    fun setUser(name: String, age: Int): String {
+//        return "Your name is $name, and you $age years old"
+//    }
+    // jika hanya 1 baris bisa dibuat function seperti ini
+    fun setUser(name: String, age: Int): String = "Your name is $name, and you $age years old"
+
+    // jika membuat function yg tidak return apa2
+    // ketik : Unit
+    // namun sekali lgi, kompiler bisa deteksi, jdi tidak wajib ketik : Unit
+    fun printUser(name: String): Unit {
+        println("Your name is $name")
+    }
+
+    val user = setUser("Alfian", 19)
+    println(user)
+
+    printUser("Alfian")
+
+    // ------------ NAMED ARGUMENT ------------
+    // peletakan parameter bisa diubah urutannya, asal key(first, middle, last) nya benar
+    val fullName = getFullName(first = "Kotlin" , middle = " is ", last = "Awesome")
+    println(fullName)
+
+    // ------------ DEFAULT ARGUMENT ------------
+    // default argument, meski sudah kita tetapkan defaultnya di function,
+    // bisa kita ubah dgn mengisi parameter saat memanggil function
+
+    // ------------ VARIABLE ARGUMENT ------------
+    // VARANG
+    val number = sumNumbers(10, 20, 30, 40)
+    println("number sum: %number")
+
+    val numberSize = getNumberSize(10, 20, 30, 40, 50)
+    print("number size: $numberSize")
 }
+
+// ------------ NAMED ARGUMENT ------------
+fun getFullName(first: String, middle: String, last: String): String {
+    return "$first $middle $last"
+}
+
+// ------------ DEFAULT ARGUMENT ------------
+fun getDefaultFullName(
+    first: String = "Kotlin",
+    middle: String = " is ",
+    last: String = "Awesome"): String {
+    return "$first $middle $last"
+}
+
+// ------------ VARIABLE ARGUMENT ------------
+// VARANG
+
+fun sumNumbers(vararg number: Int): Int {
+    return number.sum()
+}
+fun getNumberSize(vararg number: Int): Int {
+    return number.size
+}
+// tidak boleh ada 2 parameter
+// jika ingin 2 paramter atau lebih, bisa letakan param varang di akhir
+//fun sets(name: String, vararg number: Int): Int {
+//    ...
+//}
+// jika ingin varang di pertama, saat memanggilnya kita perlu menggunakan named argument
+// saat memanggil fungsinya || contoh:
+//fun main() {
+//    sets(10, 10, name = "Kotlin")
+//}
+//
+//fun sets(vararg number: Int, name: String): Int {
+//    ...
+//}
+
+// contoh bisa gunakan array sebagai param dalam varang
+//fun main() {
+//    val number = intArrayOf(10, 20, 30, 40)
+//    sets(10, 20, 20, *number , 10)
+//}
+//
+//fun sets(vararg number: Int): Int {
+//    ...
+//}
