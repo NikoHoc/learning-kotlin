@@ -14,6 +14,7 @@ fun main() {
         println("i = $i")
     }
 
+    // ----------- DATA TYPE -----------
     //val tidak bisa diubah
     var name2:String = "Alfian"
     name2 = "Niko"
@@ -53,7 +54,34 @@ fun main() {
     anyList[3] = false // mengubah value pada index tertentu
     anyList.removeAt(1) // hapus value
 
+    /*
+    * ESCAPED STRING
+    * \t -> tab (spasi tab) di string
+    * \n -> bikin baris baru di string
+    * \'  \' -> nambah petik 1 di string
+    * \"  \" ->nambah petik dua di string
+    * \\ -> nambah 1 backslash di string
+    */
     val statement = "Kotlin is \"Awesome!\""
     val statement2 = "Kotlin is \\Awesome"
     println(statement2)
+
+
+    // raw string
+    /*
+    // cara lama di java
+    val line = "Line 1\n" +
+            "Line 2\n" +
+            "Line 3\n" +
+            "Line 4\n"
+     */
+
+    // cara di kotlin pakai triple quote """ """ lalu pakai trimIndent()
+    val line = """
+        Line 1
+        Line 2
+        Line 3
+        Line 4
+    """.trimIndent()
+    println(line)
 }
