@@ -2,7 +2,7 @@ package com.dicoding.kotlin
 
 //-------- Inheritances
 //parent class Animalll
-open class Animalll(val name: String, val weight: Double, val age: Int, val isCarnivore: Boolean){
+abstract class Animalll(val name: String, val weight: Double, val age: Int, val isCarnivore: Boolean){
 
     open fun eat(){
         println("$name sedang makan!")
