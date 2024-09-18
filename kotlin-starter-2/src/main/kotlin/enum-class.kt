@@ -3,9 +3,7 @@ package com.dicoding.kotlin
 /*
 ------------- ENUM CLASS
 untuk menyimpan objek yg tipe datanya konstanta
-
- */
-
+*/
 enum class Colorr(val value: Int) {
     /*
     // Inisialisasi biasa
