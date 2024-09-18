@@ -51,7 +51,11 @@ class User(val name : String, val age : Int)  {
 }
 
 //data class akan secara otomatis menghasilkan fungsi toString()
-data class DataUser(val name : String, val age : Int) // -> DataUser(name=nrohmen, age=17)
+data class DataUser(val name : String, val age : Int){ // -> DataUser(name=nrohmen, age=17)
+    fun intro(){
+        println("My name is $name, I am $age years old")
+    }
+}
 
 fun main(){
     val user = User("nrohmen", 17)
@@ -70,4 +74,22 @@ fun main(){
 
     println(dataUser1.equals(dataUser2))
     println(dataUser1.equals(dataUser3))
+
+    /*
+    ----------- DESTRUCTING DECLARATION
+    proses memetakan objek menjadi sebuah variabel.
+     */
+
+    //component1() component2() -> sesuai dengan jumlah properti pada class
+    //componentN()
+    val name = dataUser.component1()
+    val age = dataUser.component2()
+
+    //bisa dibuat lebih singkat
+    val (names, ages) = dataUser
+
+    println("My name is $name, I am $age years old")
+
+    //bisa buat function di dataclass
+    dataUser.intro()
 }
