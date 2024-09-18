@@ -1,4 +1,4 @@
-package com.dicoding.kotlin
+package com.dicoding.kotlin.com.dicoding.pbo
 
 // ----- IMPORT
 /*
@@ -8,7 +8,6 @@ import packagename.propertyName
  */
 
 // import packagename.ClassName.tes -> sehingga saat manggil tinggal ketik tes
-import kotlin.random.Random
 
 //val someInt = Random(0).nextInt(1, 10)
 

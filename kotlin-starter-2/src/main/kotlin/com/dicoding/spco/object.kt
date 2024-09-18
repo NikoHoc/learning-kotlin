@@ -1,4 +1,4 @@
-package com.dicoding.kotlin
+package com.dicoding.kotlin.com.dicoding.spco
 
 //Singleton Object, Companion Object, & Anonymous Class
 
@@ -90,7 +90,7 @@ fun main() {
 
 
     //companion -> .Companion opsional, bisa lngsung nama function
-    Library.Companion.borrowBookById(21)
+    Library.borrowBookById(21)
     Library.borrowBookById(21)
 
     //jika ingin akses seperti ini, maka functionay pindahkan ke companion object

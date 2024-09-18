@@ -1,4 +1,6 @@
-package com.dicoding.kotlin
+package com.dicoding.kotlin.com.dicoding.spco
+
+import com.dicoding.kotlin.com.dicoding.fundamentals.Color
 
 /*
 ------------- ENUM CLASS

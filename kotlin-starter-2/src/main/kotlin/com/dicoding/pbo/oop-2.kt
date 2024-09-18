@@ -1,4 +1,4 @@
-package com.dicoding.kotlin
+package com.dicoding.kotlin.com.dicoding.pbo
 
 // class dengan primary constructor
 class Animals(val name: String, val weight: Double, val age: Int = 0, val isMammal: Boolean)

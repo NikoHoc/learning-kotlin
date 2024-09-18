@@ -1,4 +1,4 @@
-package com.dicoding.kotlin
+package com.dicoding.kotlin.com.dicoding.pbo
 
 //-------- Inheritances
 //parent class Animalll
