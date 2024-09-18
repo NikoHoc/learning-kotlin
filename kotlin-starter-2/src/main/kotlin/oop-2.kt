@@ -89,8 +89,10 @@ fun main(){
 }
 
 // ---- VISIBILITY MODIFIERS
+/*
+public, private, internal, protected
+ */
 //Public: dapat diakses dari manapun.
-
 //Private: hanya dapat diakses pada scope yang sama.
 // contoh private: -> dipakai di parameter
 //class Animal(private var name: String, private val weight: Double, private val age: Int, private val isMammal: Boolean = true) {
@@ -105,13 +107,11 @@ fun main(){
 //
 //}
 
-
 //Protected: Anggota hanya dapat diakses pada kelas turunannya atau kelas itu sendiri.
 open class Animalss(val name: String, protected val weight: Double)
 
 class Cat(pName: String, pWeight: Double) : Animalss(pName, pWeight)
 //cat weight tidak bisa diakses jika dari main
 //di class cat hrus tmbhkan function untuk mendapatkan nilai weightnya
-
 
 //Internal: tidak dapat diakses diluar dari modulnya tersebut.
