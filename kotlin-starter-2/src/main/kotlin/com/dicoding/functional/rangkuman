@@ -1,0 +1,24 @@
+Rangkuman dari Kotlin Functional Programming
+Sebelum lanjut ke paradigma Object-Oriented Programming, mari kita rangkum apa saja yang sudah Anda pelajari pada sub-modul Functional Programming.
+
+Lambda expression, atau biasa disebut dengan anonymous function atau function literal adalah fitur yang cukup populer sampai sekarang dalam dunia functional programming. Bisa disebut sebagai anonymous karena lambda tidak memiliki sebuah nama seperti halnya sebuah fungsi pada umumnya. Karena merupakan sebuah fungsi, lambda juga dapat memiliki daftar parameter, body dan return type. Berikut adalah beberapa karakteristik dari Lambda pada kotlin.
+
+Dalam menggunakan lambda, kita tidak perlu mendeklarasi tipe spesifik untuk nilai kembaliannya. Tipe tersebut akan ditentukan oleh kompiler secara otomatis.
+
+Walaupun merupakan sebuah fungsi, lambda tidak membutuhkan kata kunci fun dan visibility modifier saat dideklarasikan, karena lambda bersifat anonymous.
+
+Parameter yang akan ditetapkan berada di dalam kurung kurawal {}.
+
+Ketika ingin mengembalikan nilai, kata kunci return tidak diperlukan lagi karena kompiler akan secara otomatis mengembalikan nilai dari dalam body.
+
+Lambda expression dapat digunakan sebagai argumen untuk sebuah parameter dan dapat disimpan ke dalam sebuah variabel.
+
+Higher-Order Function, yaitu sebuah fungsi yang menggunakan fungsi lainnya sebagai parameter, menjadikan tipe kembalian, ataupun keduanya. High-order function adalah salah satu fitur yang memanfaatkan Lambda.
+
+Kotlin standard library memiliki beberapa scope function yang tujuan utamanya adalah bagaimana menuliskan logika kode di dalam konteks dari sebuah objek. Dalam menggunakan fungsi tersebut kita akan memanfaatkan lambda expression yang memiliki ruang lingkupnya sendiri, di mana dalam ruang lingkup tersebut kita dapat mengakses konteks dari sebuah objek. Fungsi inilah yang dinamakan sebagai scope function. Beberapa fungsi yang berada di dalamnya antara lain, let, run, with, apply, dan also.
+
+Sama seperti Java, Kotlin  mendukung juga mekanisme reflection yang berarti seperangkat fitur bahasa dan library yang memungkinkan kita untuk mengamati struktur kode dari proyek yang sedang kita kerjakan secara langsung.
+
+Saat menggunakan Kotlin, kita bisa mendeklarasi fungsi di dalam sebuah fungsi dan menggunakannya hanya di dalam fungsi tersebut.
+
+Recursion merupakan sebuah teknik dasar dalam pemrograman yang bisa kita gunakan untuk menyederhanakan pemecahan masalah yang umumnya diselesaikan dengan cara yang kompleks. Di Kotlin, recursion disebut juga dengan recursive function.
