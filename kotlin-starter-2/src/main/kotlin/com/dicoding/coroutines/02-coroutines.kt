@@ -4,8 +4,8 @@ import kotlinx.coroutines.*
 /*
 -------------- Job and Deferred --------------
 fungsi async pada coroutines dibagi 2:
-1. fungsi yg return hasil -> digunakan jika ingin sebuah data ketika fungsi selesai
-2. fungsi yg tidak return hasil -> untuk mengirim analitik, entry log, dll
+1. fungsi yg return hasil -> digunakan jika ingin sebuah data ketika fungsi selesai (deferred)
+2. fungsi yg tidak return hasil -> untuk mengirim analitik, entry log, dll (job)
  */
 
 /*
