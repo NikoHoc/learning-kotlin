@@ -104,7 +104,7 @@ tambah : setelah tipe parameter
 /*
 ------- Variance -------
 konsep menggambarkan tipe yg punya subtipe yg sma dan tipe argumen yg berkaitan
-perlu ketika ingin buat kelas/fungsi generic dgn batasan yg tdk mengganggu penggunaannya
+perlu ketika ingin buat kelas/fungsi generic dgn batasan yg tdk mengganggu dalam penggunaannya
  */
 
 abstract class Vehicle(wheel: Int)
